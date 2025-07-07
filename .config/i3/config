@@ -18,7 +18,7 @@ set $mod Mod1
 exec_always killall -q polybar
 exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch.sh --colorblocks
-exec_always --no-startup-id ~/.config/polybar/scripts/hideshow.py
+#exec_always --no-startup-id ~/.config/polybar/scripts/hideshow.py
 
 for_window [class="^.*"] border pixel 1
 hide_edge_borders both
@@ -198,3 +198,6 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+#bindsym $mod+Escape exec --no-startup-id ~/.config/polybar/scripts/show.sh
+bindsym $mod+Escape exec --no-startup-id polybar-msg cmd toggle
