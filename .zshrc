@@ -3,11 +3,6 @@ zmodload zsh/complist
 autoload -U compinit && compinit
 autoload -U colors && colors
 
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
-
 # CPP class generation
 USER=ljylhank
 MAIL=ljylhank@student.hive.fi
@@ -32,7 +27,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;32 # colorize cmp me
 zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
 
 # main opts
-setopt append_history inc_append_history share_history # better history
+setopt append_history inc_append_history share_history hist_ignore_all_dups # better history
 # on exit, history appends rather than overwrites; history is appended as soon as cmds executed; history shared across sessions
 setopt auto_menu menu_complete # autocmp first menu match
 setopt autocd # type a dir to cd
@@ -44,19 +39,24 @@ setopt interactive_comments # allow comments in shell
 unsetopt prompt_sp # don't autoclean blanklines
 stty stop undef # disable accidental ctrl s
 
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
+
 # fzf setup
 #source <(fzf --zsh) # allow for fzf history widget
 
 # binds
 bindkey "^a" beginning-of-line
-bindkey "^e" end-of-line
-bindkey "^k" kill-line
-bindkey "^j" backward-word
-bindkey "^k" forward-word
-bindkey "^H" backward-kill-word
+bindkey "^4" end-of-line
+bindkey "^x" kill-line
+bindkey "^h" backward-word
+bindkey "^l" forward-word
+#bindkey "^H" backward-kill-word
 # ctrl J & K for going up and down in prev commands
-bindkey "^J" history-search-forward
-bindkey "^K" history-search-backward
+#bindkey "^J" history-search-forward
+#bindkey "^K" history-search-backward
 bindkey '^R' fzf-history-widget
 
 # set up prompt
