@@ -17,7 +17,7 @@ set $mod Mod1
 set $ms Mod4
 
 exec_always killall -q polybar
-#exec_always --no-startup-id picom
+exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch.sh --colorblocks
 exec_always --no-startup-id cd ~/masterconfig && git pull
 exec_always nvidia-settings
