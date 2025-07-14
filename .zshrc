@@ -19,6 +19,7 @@ export PATH="$PATH:/usr/local/i386elfgcc/bin"
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias c='clear'
 
 # cmp opts
 zstyle ':completion:*' menu select # tab opens cmp menu
@@ -58,7 +59,19 @@ bindkey "^l" forward-word
 # ctrl J & K for going up and down in prev commands
 #bindkey "^J" history-search-forward
 #bindkey "^K" history-search-backward
-bindkey '^R' fzf-history-widget
+#bindkey '^R' fzf-history-widget
+
+# clear screen
+function clear-screen-and-scrollback() {
+  builtin echoti civis >"$TTY"
+  builtin print -rn -- $'\e[H\e[2J' >"$TTY"
+  builtin zle .reset-prompt
+  builtin zle -R
+  builtin print -rn -- $'\e[3J' >"$TTY"
+  builtin echoti cnorm >"$TTY"
+}
+zle -N clear-screen-and-scrollback
+bindkey '^R' clear-screen-and-scrollback
 
 # set up prompt
 NEWLINE=$'\n'

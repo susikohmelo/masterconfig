@@ -54,7 +54,7 @@ function M.colorscheme()
 	-- General data types
 	set(0, 'Type',			{ fg = c.green })
 	set(0, 'Constant',		{ fg = c.green })
-	set(0, 'Identifier',	{ fg = c.white })
+	set(0, 'Identifier',	{ fg = c.magenta })
 	set(0, 'Special',		{ fg = c.cyan })
 	set(0, 'Keyword',		{ fg = c.yellow })
 
