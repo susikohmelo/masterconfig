@@ -42,33 +42,3 @@ size = 12.0
 # small box when a HEX is detected by the editor.
 
 # Colors (Wombat)
-
-# Default colors
-[colors.primary]
-background = '#000000'
-foreground = '#e5e1d8'
-
-# Normal colors
-[colors.normal]
-black   = '#000000'
-red     = '#ff4d4d'
-green   = '#7cff6a'
-yellow  = '#ff9a00'
-blue    = '#358bff'
-magenta = '#ff3285'
-cyan    = '#00e7ff'
-white   = '#e5e1d8'
-
-# Bright colors
-[colors.bright]
-black   = '#b4b4b4'
-red     = '#f99f92'
-green   = '#e3f7a1'
-yellow  = '#f2e9bf'
-blue    = '#b3d2ff'
-magenta = '#e5bdff'
-cyan    = '#c2fefa'
-white   = '#ffffff'
-
-#theme number for toggler
-#1

@@ -55,6 +55,12 @@ bindkey "^4" end-of-line
 bindkey "^x" kill-line
 bindkey "^h" backward-word
 bindkey "^l" forward-word
+
+# ALACRITTY SPECIFIC
+toggler(){ ~/.config/alacritty/./themetoggler.sh }
+zle -N toggler
+bindkey "^\`" toggler
+
 #bindkey "^H" backward-kill-word
 # ctrl J & K for going up and down in prev commands
 #bindkey "^J" history-search-forward
