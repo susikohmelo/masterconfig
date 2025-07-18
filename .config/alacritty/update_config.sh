@@ -15,3 +15,4 @@ else
 	cat ~/masterconfig/.config/alacritty/theme_2.toml >> $CONF
 fi
 
+source ~/.config/alacritty/./prompt_update.sh
