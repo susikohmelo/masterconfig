@@ -97,6 +97,8 @@ export PROMPT_PWD_BG="#e5e1d8"
 export PROMPT_ARROW_FG="#e5e1d8"
 export PROMPT_ARROW_BG="#000000"
 
+source ~/.config/alacritty/./prompt_update.sh
+
 # The prompt itself
 NEWLINE=$'\n'
 #PROMPT="${NEWLINE}%F{#FFFFFF}%D{%K%M} %B%K{#56a9e9}%F{#000000} %n %K{#e0e2db}%F{#000000} %~ %f%k %b❯ "
@@ -110,7 +112,8 @@ function print_prompt() {
 echo -n "${NEWLINE}%K{${PROMPT_TIME_BG}}%F{${PROMPT_TIME_FG}}%D{%K%M} \
 %B%K{${PROMPT_NAME_BG}}%F{${PROMPT_NAME_FG}} \
 %n %K{${PROMPT_PWD_BG}}%F{${PROMPT_PWD_FG}} %~ \
-%f%k %b%K{%${PROMPT_ARROW_BG}}%F{${PROMPT_ARROW_FG}}❯ " }
+%f%k %b%K{%${PROMPT_ARROW_BG}}%F{${PROMPT_ARROW_FG}}❯ ";
+}
 
 PROMPT='$(print_prompt)'
 
