@@ -66,3 +66,7 @@ vim.cmd("set showmatch")
 vim.cmd("set hlsearch")
 
 vim.cmd("set cursorline")
+
+
+-- LSP virtual text
+vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })

@@ -6,7 +6,8 @@
     selected-bg: #000622;
     blue: #358bff;
     fg-col: #cdd6f4;
-    grey: #d4d4d4;
+    button-fg: #000000;
+    button-bg: #d4d4d4;
     width: 800;
     //font: "JetBrainsMono Nerd Font 18";
 }
@@ -83,16 +84,16 @@ mode-switcher {
   }
 
 button {
-    padding: 10px;
-    background-color: @bg-col-light;
-    text-color: @grey;
+    padding: 3px;
+	background-color: @bg-col;
+	text-color: @blue;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: @bg-col;
-  text-color: @blue;
+    background-color: @button-bg;
+    text-color: @button-fg;
 }
 
 message {
