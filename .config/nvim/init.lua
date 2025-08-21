@@ -1,6 +1,11 @@
 require("config.lazy")
 require("susikolormelo.init").colorscheme()
 
+-- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
+vim.opt.completeopt = { "menuone", "popup" } 
+
+vim.cmd("inoremap jj <ESC>")
+
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
 
