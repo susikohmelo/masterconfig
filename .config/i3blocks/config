@@ -1,10 +1,48 @@
-[time]
-command=date +%T
-interval=5
+full_text=" "
+align=center
+color=#FFFFFF
+separator=false
+separator_block_width=42
+
+[colorpicker]
+command=~/.config/i3blocks/scripts/colorpicker.sh
+format=json
+interval=1
+#IDLE_TEXT=CPICK
+#IDLE_TEXT_COLOR=#FFFFFF
+
+[separator]
+
+[cpu_usage]
+command=~/.config/i3blocks/scripts/cpu_usage.sh
+interval=10
+LABEL=CPU 
+#min_width=CPU: 100.00%
+#T_WARN=50
+#T_CRIT=80
+#DECIMALS=2
+#COLOR_NORMAL=#EBDBB2
+#COLOR_WARN=#FFFC00
+#COLOR_CRIT=#FF0000
+
+[separator]
+
+[memory]
+command=~/.config/i3blocks/scripts/memory.sh
+label=MEM 
+interval=30
+
+[separator]
 
 # Volume bar
 [volume-pipewire]
-command=/home/susi/masterconfig/.config/i3blocks/scripts/volume-pipewire.sh
+command=~/.config/i3blocks/scripts/volume-pipewire.sh
 interval=persist
 SUBSCRIBE=1
 USE_ALSA_NAME=1
+
+[separator]
+
+[time]
+command=date "+%H.%M | %d/%m"
+interval=1
