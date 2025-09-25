@@ -14,6 +14,7 @@ alias vim="nvim"
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PATH="$PATH:/usr/local/i386elfgcc/bin"
+export PATH="$PATH:/home/susi/.local/bin"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -22,6 +23,8 @@ export PATH="$PATH:/usr/local/i386elfgcc/bin"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias c='clear'
+
+export SCRIPT_DIR=.config/scripts
 
 # cmp opts
 zstyle ':completion:*' menu select # tab opens cmp menu

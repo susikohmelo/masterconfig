@@ -16,11 +16,32 @@
 set $mod Mod1
 set $ms Mod4
 
-exec_always killall -q polybar
+exec_always setxkbmap -option "caps:swapescape"
+
+#exec_always nvidia-settings
+#exec_always killall -q polybar
+#exec_always --no-startup-id ~/.config/polybar/launch.sh --colorblocks
 exec_always --no-startup-id picom
-exec_always --no-startup-id ~/.config/polybar/launch.sh --colorblocks
 exec_always --no-startup-id cd ~/masterconfig && git pull
-exec_always nvidia-settings
+
+
+# BAR - - - - - - - - - - - - - - - - - - - - - - - -
+bindsym $mod+Escape bar mode toggle
+bar {
+	position top
+	colors {
+		background #000000
+		separator  #000000
+	}
+	status_command i3blocks
+	binding_mode_indicator no
+	mode hide
+}
+
+#exec_always autorandr -c ciiartii
+exec_always "xrandr --output DVI-1-0 --mode 1600x1200_50.00i --pos 1024x0 --gamma 1.7:1.40:1.65"
+exec_always "xrandr --output HDMI-0 --gamma 1.2:1.2:1.2"
+exec_always "xrandr --output DP-0 --gamma 1.75:1.50:1.75"
 
 #exec_always --no-startup-id ~/.config/polybar/scripts/hideshow.py
 
@@ -60,8 +81,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2.5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2.5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -217,7 +238,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #bindsym $mod+Escape exec --no-startup-id ~/.config/polybar/scripts/show.sh
-bindsym $mod+Escape exec --no-startup-id polybar-msg cmd toggle
+#bindsym $mod+Escape exec --no-startup-id polybar-msg cmd toggle
 
 bindsym $ms+u  exec --no-startup-id setxkbmap us
 bindsym $ms+f  exec --no-startup-id setxkbmap fi
