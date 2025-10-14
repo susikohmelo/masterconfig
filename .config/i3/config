@@ -16,7 +16,7 @@
 set $mod Mod1
 set $ms Mod4
 
-exec_always setxkbmap -option "caps:swapescape"
+#exec_always setxkbmap -option "caps:swapescape"
 
 #exec_always nvidia-settings
 #exec_always killall -q polybar

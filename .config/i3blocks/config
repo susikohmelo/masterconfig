@@ -43,6 +43,13 @@ USE_ALSA_NAME=1
 
 [separator]
 
+[key_layout]
+command=~/.config/i3blocks/scripts/key_layout.sh
+#label=LAYOUT
+interval=1
+
+[separator]
+
 [time]
-command=date "+%H.%M | %d/%m"
+command=date "+%d/%m | %H.%M"
 interval=1
