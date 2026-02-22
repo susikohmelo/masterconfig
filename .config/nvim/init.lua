@@ -4,7 +4,7 @@ require("susikolormelo.init").colorscheme()
 -- prevent the built-in vim.lsp.completion autotrigger from selecting the first item
 vim.opt.completeopt = { "menuone", "popup" } 
 
-vim.cmd("inoremap jj <ESC>")
+vim.cmd("inoremap aa <ESC>")
 
 vim.cmd("set tabstop=4")
 vim.cmd("set shiftwidth=4")
@@ -23,6 +23,20 @@ vim.cmd("set number relativenumber")
 vim.cmd("set encoding=utf-8")
 --set colorcolumn=81
 --highlight ColorColumn ctermbg=11
+
+vim.cmd("nnoremap . h")
+vim.cmd("nnoremap a j")
+vim.cmd("nnoremap e k")
+vim.cmd("nnoremap o l")
+vim.cmd("nnoremap p w")
+vim.cmd("nnoremap x b")
+vim.cmd("nnoremap n a")
+vim.cmd("nnoremap t i")
+vim.cmd("nnoremap v yy")
+vim.cmd("nnoremap h o")
+vim.cmd("nnoremap s v")
+vim.cmd("nnoremap ss <C-V>")
+vim.cmd("nnoremap c p")
 
 -- Read .asm extensions as NASM and set formatting
 vim.cmd("au BufRead,BufNewFile *.asm set filetype=nasm shiftwidth=8 tabstop=8")
